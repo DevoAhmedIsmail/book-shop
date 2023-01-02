@@ -1,0 +1,75 @@
+.sidebar a {
+  padding: 14px 3px;
+  position: relative;
+}
+
+.sidebar a::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--main-color);
+  transform-origin: center;
+  transform: translate(-50%, 0) scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+.sidebar a:hover::before {
+  transform: translate(-50%, 0) scaleX(1);
+}
+
+.sidebar a.active::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--main-color);
+    transform-origin: center;
+    transform: translate(-50%, 0) scaleX(1);
+}
+
+.sidebar-sm {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 999;
+    transition: 400ms;
+}
+.sidebar-sm.show {
+    left: 0;
+}
+
+.sidebar-sm a {
+  padding: 8px 10px;
+  position: relative;
+}
+
+.sidebar-sm a:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.sidebar-sm a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 3px;
+  background-color: var(--main-color);
+  transform-origin: center;
+  transform:  scaleY(0);
+  transition: transform 0.3s ;
+}
+
+
+.sidebar-sm a:hover::before {
+  transform:  scaleY(1);
+}
+
+.sidebar-sm a.active::before {
+  transform: scaleY(1);
+}
