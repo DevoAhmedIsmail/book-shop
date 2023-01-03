@@ -1,18 +1,21 @@
 import React from "react";
 import Header from "./Header/Header";
 import "./Home.css";
-
+import { useSelector } from "react-redux";
 
 import { AiOutlineSafetyCertificate } from "react-icons/ai";
 import { FaShippingFast, FaMoneyCheckAlt } from "react-icons/fa";
 import { ImPriceTag } from "react-icons/im";
 
-
-import { books } from "../../assets/data";
 import BookSlider from "../../components/BooksSlider/BookSlider";
+import BookDetailSlider from "../../components/BookDetailSlider/BookDetailSlider";
+import LimitedTime from "../../components/LimitedTime/LimitedTime";
+import BooksOffer from "../../components/BooksOffer/BooksOffer";
 
 const Home = () => {
- 
+  const { books } = useSelector((state) => {
+    return state.books;
+  });
 
   return (
     <main className="home overflow-hidden">
@@ -68,20 +71,46 @@ const Home = () => {
       </section>
       {/* ./SubHeader */}
 
-{/* Best Sellers */}
+      {/* Best Sellers */}
       <section className="container mx-auto py-10 px-3">
-        <h3 className="slider-title text-2xl pb-2 font-bold tracking-wider mb-7 relative">Current BestSellers</h3>
+        <h3 className="slider-title text-2xl pb-2 font-bold tracking-wider mb-7 relative">
+          Current BestSellers
+        </h3>
         <BookSlider books={books} />
       </section>
-{/* ./Best Sellers */}
+      {/* ./Best Sellers */}
 
-{/* Top Rated */}
-<section className="container mx-auto pb-10 px-3">
-        <h3 className="slider-title text-2xl pb-2 font-bold tracking-wider mb-7 relative">Top Rated Books</h3>
+      {/* Top Rated */}
+      <section className="container mx-auto pb-10 px-3">
+        <h3 className="slider-title text-2xl pb-2 font-bold tracking-wider mb-7 relative">
+          Top Rated Books
+        </h3>
         <BookSlider books={books} />
       </section>
-{/* ./Top Rated */}
+      {/* ./Top Rated */}
 
+      {/* Book Slider */}
+      <section className="container mx-auto">
+        <BookDetailSlider />
+      </section>
+      {/* ./Book Slider */}
+
+      {/* Limited Offer */}
+      <section className="limited-offer py-10">
+        <div className="container mx-auto">
+          <h1 className="text-2xl text-center text-slate-700 font-semibold uppercase">
+            Limited Time Offer
+          </h1>
+          <LimitedTime endDay="3" />
+        </div>
+        {/* Books Offers */}
+        <div className="books-offers flex flex-col md:flex-row flex-wrap mt-5">
+          <BooksOffer />
+        </div>
+
+        {/* ./Books Offers */}
+      </section>
+      {/* ./Limited Offer */}
     </main>
   );
 };
