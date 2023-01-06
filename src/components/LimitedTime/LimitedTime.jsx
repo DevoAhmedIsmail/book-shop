@@ -11,16 +11,20 @@ const LimitedTime = ({ endDay}) => {
 
   // 10 day 00:00:00
   setTimeout(() => {
+
     if (
-      endDay - date.getDay() === 0 &&
-      24 - date.getHours() === 0 &&
-      60 - date.getMinutes() === 0 &&
-      60 - date.getSeconds() === 0
+      endDay - date.getDate() < 0 ||
+     ( 
+      endDay - date.getDate() <= 0 &&
+      24 - date.getHours() <= 0 &&
+      60 - date.getMinutes() <= 0 &&
+      60 - date.getSeconds() <= 0)
     ) {
       setDay(0);
       setHours(0);
       setMinutes(0);
       setSeconds(0);
+      console.log('done');
     } else {
       setDay(endDay - date.getDate());
       setHours(23 - date.getHours());

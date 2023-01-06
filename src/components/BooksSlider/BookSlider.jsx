@@ -35,7 +35,7 @@ const BookSlider = ({ books }) => {
   return (
     <Slider {...settings}>
       {books.map((book) => (
-        <Link to={`book/${book.id}`} key={book.id}>
+        <Link to={`books/${book.id}`} key={book.id}>
         <div
           className="book-card h-100 flex flex-col justify-between items-start p-2 border border-slate-300"
           
@@ -45,6 +45,7 @@ const BookSlider = ({ books }) => {
               src={book.image}
               alt="book"
               className="object-contain w-full h-full hover:scale-110 transition duration-300"
+              loading="lazy"
             />
           </div>
 

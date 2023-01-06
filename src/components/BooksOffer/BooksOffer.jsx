@@ -86,6 +86,7 @@ const BooksOffer = () => {
             src="https://m.media-amazon.com/images/I/51otrCcMNmL.jpg"
             alt="book"
             className="w-full object-contain max-h-72"
+            loading="lazy"
           />
           <div className="absolute top-0 left-0 bg-yellow-500 py-1 px-3 font-semibold text-slate-600">
             20% OFF

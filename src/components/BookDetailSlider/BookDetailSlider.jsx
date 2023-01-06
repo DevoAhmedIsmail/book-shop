@@ -30,6 +30,7 @@ const BookDetailSlider = () => {
           src={book.image}
           alt="book"
           className="w-3/4 object-contain mx-auto rounded-lg shadow-xl shadow-cyan-100"
+          loading="lazy"
         />
       </div>
       <div className="w-full md:w-auto flex flex-col items-center md:items-start mt-5 md:mt-0">
@@ -47,7 +48,7 @@ const BookDetailSlider = () => {
         </div>
         <p>Author : {book.author}</p>
         <Link
-          to={`/book/${book.id}`}
+          to={`/books/${book.id}`}
           className="py-2 px-10 text-cyan-600 border border-cyan-600 hover:bg-cyan-600 hover:text-white transition duration-300 rounded-full shadow-xl mt-5"
         >
           View Details

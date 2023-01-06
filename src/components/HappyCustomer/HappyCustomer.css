@@ -1,0 +1,28 @@
+.profiles .profile:not(.active) .profile-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(238, 238, 238, 0.514);
+    z-index: 9999;
+    border-radius: 50%;
+    transition: all 300ms;
+
+}
+
+.profiles .profile p ,
+.profiles .profile span {
+    transition: all 300ms;
+
+}
+
+.profiles .profile:not(.active) p,
+.profiles .profile:not(.active) span {
+    color:rgb(158, 158, 158);
+    transition: all 300ms;
+
+}
