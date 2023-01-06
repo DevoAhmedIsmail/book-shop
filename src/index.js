@@ -10,6 +10,7 @@ import HomeRoot from "./pages/Roots/HomeRoot";
 import Home from "./pages/Home/Home";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import Books from "./pages/Books/Books";
+import BookDetails from "./pages/BookDetails/BookDetails";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
         path: "books",
         element: <Books />,
       },
+      {
+        path: "books/:bookID",
+        element: <BookDetails />,
+      }
     ],
   },
 ]);
