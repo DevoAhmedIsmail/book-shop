@@ -6,6 +6,11 @@ import { getBookById, getRelatedBooks } from "../../State/booksSlice";
 
 import "./BookDetails.css";
 
+// Images
+import adsImage from "../../assets/images/ads.jpg";
+import person1 from "../../assets/images/profile-pic-1.jpg";
+import person2 from "../../assets/images/profile-pic-2.jpg";
+
 const BookDetails = () => {
   const [BOOK, setBOOK] = useState({});
   const [relatedBOOK, setRelatedBOOK] = useState([]);
@@ -31,11 +36,11 @@ const BookDetails = () => {
 
   useEffect(() => {
     // Default Values When render
-    setCount(1)
-    setViewMore(false)
+    setCount(1);
+    setViewMore(false);
 
     // to scroll up when open
-    window.scrollTo(0, 0)
+    // window.scrollTo(0, 0)
 
     dispatch(() => getBookById(params.bookID));
     const book = books.find((book) => book.id === Number(params.bookID));
@@ -58,7 +63,7 @@ const BookDetails = () => {
       <div className="container mx-auto px-5 md:px-0">
         <div className="flex flex-col lg:flex-row py-10">
           {/* Left Side in Lg Screen */}
-          <div className="w-full lg:w-3/4 ">
+          <div className="w-full lg:w-3/4 pr-5">
             <div className="flex flex-col md:flex-row">
               <div className="w-full md:w-1/3 h-120">
                 <img
@@ -129,36 +134,201 @@ const BookDetails = () => {
                 </div>
               </div>
             </div>
+
+            {/* Comments */}
+            <div className="mt-16">
+              {/* Header */}
+              <div className="flex flex-row items-center border-b-2 pb-8">
+                <p className="text-slate-600 font-semibold text-xl mr-5">
+                  Community Reviews
+                </p>
+                <p className="flex flex-row">
+                  <AiTwotoneStar className="text-yellow-400 text-lg" />
+                  <AiTwotoneStar className="text-yellow-400 text-lg" />
+                  <AiTwotoneStar className="text-yellow-400 text-lg" />
+                  <AiTwotoneStar className="text-yellow-400 text-lg" />
+                  <AiTwotoneStar className="text-yellow-400 text-lg" />
+                </p>
+                <p className="ml-2 text-slate-400">368 reviews</p>
+              </div>
+
+              {/* comment 1 */}
+              <div className="comments-container mt-8">
+                {/* comment card */}
+                <div className="comment-card flex flex-col md:flex-row">
+                  {/* Comment Left side */}
+                  <div className="w-full md:w-2/12 flex justify-center">
+                    <img
+                      src={person2}
+                      alt="person"
+                      className="rounded-full w-24 h-24 object-cover"
+                    />
+                  </div>
+                  {/* Comment Right side */}
+                  <div className="w-full md:w-10/12">
+                    {/* title */}
+                    <div className="comment-title flex flex-col items-center justify-center md:justify-start md:items-start ">
+                      <div className="flex flex-col justify-center items-center md:flex-row">
+                        <p className="text-xl font-semibold text-slate-600 mr-5">
+                          Eugene Barnett
+                        </p>
+                        <div className="flex flex-row mt-2 md:mt-0">
+                          <p className="text-sm text-slate-400 mr-3">Rated it</p>
+                        <p className="flex flex-row">
+                          <AiTwotoneStar className="text-yellow-400 text-lg" />
+                          <AiTwotoneStar className="text-yellow-400 text-lg" />
+                          <AiTwotoneStar className="text-yellow-400 text-lg" />
+                          <AiTwotoneStar className="text-yellow-400 text-lg" />
+                          <AiTwotoneStar className="text-yellow-400 text-lg" />
+                        </p>
+                        </div>
+                      </div>
+                      <span className="text-sm text-slate-400 block mt-2">
+                        Jul 27, 2022
+                      </span>
+                    </div>
+                    <div className="mt-5">
+                      <p className="text-slate-500">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Adipisci ex aperiam mollitia ut qui! Eius veritatis
+                        suscipit dolores quod exercitationem porro, voluptate
+                        natus voluptatem sequi et recusandae laborum quas. In ex
+                        quis nobis, quibusdam consectetur officia recusandae,
+                        harum assumenda unde voluptatem maxime omnis molestias
+                        dicta, alias ducimus ipsa accusamus eligendi. Aut
+                        consequatur inventore voluptatem asperiores! Tenetur
+                        voluptatibus commodi beatae voluptatum, quidem
+                        repudiandae. Ea quam id blanditiis, natus aut,
+                        accusantium, provident et aliquid quisquam dolor tenetur
+                        alias sapiente fugiat explicabo exercitationem.
+                      </p>
+                      <p className="text-slate-500 mt-5 mb-3">
+                        Amet consectetur adipisicing elit. Aliquid ea molestias
+                        voluptatum, eligendi ipsum provident repellat fugiat
+                        accusantium maxime pariatur, incidunt quibusdam, facere
+                        illum expedita aliquam accusamus et. Eius, hic!
+                      </p>
+                    </div>
+                    <span className="text-cyan-400 hover:text-cyan-600 cursor-pointer">
+                      Reply
+                    </span>
+                  </div>
+                </div>
+              </div>
+              {/* ./Comment 1 */}
+
+              {/* comment 1 */}
+              <div className="comments-container mt-8">
+                {/* comment card */}
+                <div className="comment-card flex flex-col md:flex-row">
+                  {/* Comment Left side */}
+                  <div className="w-full md:w-2/12 flex justify-center">
+                    <img
+                      src={person1}
+                      alt="person"
+                      className="rounded-full w-24 h-24 object-cover"
+                    />
+                  </div>
+                  {/* Comment Right side */}
+                  <div className="w-full md:w-10/12">
+                    {/* title */}
+                    <div className="comment-title flex flex-col items-center justify-center md:justify-start md:items-start ">
+                      <div className="flex flex-col justify-center items-center md:flex-row">
+                        <p className="text-xl font-semibold text-slate-600 mr-5">
+                          Beverly Schneider
+                        </p>
+                        <div className="flex flex-row mt-2 md:mt-0">
+                          <p className="text-sm text-slate-400 mr-3">Rated it</p>
+                        <p className="flex flex-row">
+                          <AiTwotoneStar className="text-yellow-400 text-lg" />
+                          <AiTwotoneStar className="text-yellow-400 text-lg" />
+                          <AiTwotoneStar className="text-yellow-400 text-lg" />
+                          <AiTwotoneStar className="text-yellow-400 text-lg" />
+                          <AiTwotoneStar className="text-yellow-400 text-lg" />
+                        </p>
+                        </div>
+                      </div>
+                      <span className="text-sm text-slate-400 block mt-2">
+                        Jan 05, 2023
+                      </span>
+                    </div>
+                    <div className="mt-5">
+                      <p className="text-slate-500">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Adipisci ex aperiam mollitia ut qui! Eius veritatis
+                        suscipit dolores quod exercitationem porro, voluptate
+                        natus voluptatem sequi et recusandae laborum quas. In ex
+                        quis nobis, quibusdam consectetur officia recusandae,
+                        harum assumenda unde voluptatem maxime omnis molestias
+                        dicta, alias ducimus ipsa accusamus eligendi. Aut
+                        consequatur inventore voluptatem asperiores! Tenetur
+                        voluptatibus commodi beatae voluptatum, quidem
+                        repudiandae. Ea quam id blanditiis, natus aut,
+                        accusantium, provident et aliquid quisquam dolor tenetur
+                        alias sapiente fugiat explicabo exercitationem.
+                      </p>
+                    </div>
+                    <span className="text-cyan-400 hover:text-cyan-600 cursor-pointer">
+                      Reply
+                    </span>
+                  </div>
+                </div>
+              </div>
+              {/* ./Comment 1 */}
+            </div>
+            {/* ./Comments */}
+            <div className="text-center block border-2 py-3 text-slate-400 font-semibold mt-8 cursor-pointer hover:bg-slate-400 hover:text-slate-100 transition">
+              View All Reviews
+            </div>
           </div>
           {/* ./Left Side in Lg Screen */}
+
           {/* Right Side in Lg Screen */}
           <div className="w-full lg:w-1/4">
             <p className="text-xl font-semibold text-slate-500 mt-10 md:mt-0 text-center md:text-left">
-              Related Books{" "}
+              Related Books
             </p>
             {/* Related box Container */}
             <div className="flex flex-col md:flex-row lg:flex-col justify-start items-center flex-wrap space-y-3 mt-5">
               {relatedBOOK.map((RBOOK) => (
                 //  Card
-                <Link to={`/books/${RBOOK.id}`} key={RBOOK.id} className="w-full md:w-1/3 lg:w-full">
-                <div className="card flex flex-row">
-                  <div className="card-image  w-20 h-32">
-                    <img
-                      src={RBOOK.image}
-                      alt={RBOOK.title}
-                      className="w-full h-full object-contain md:object-cover lg:object-contain rounded"
-                    />
+                <Link
+                  to={`/books/${RBOOK.id}`}
+                  key={RBOOK.id}
+                  className="w-full md:w-1/3 lg:w-full"
+                >
+                  <div className="card flex flex-row">
+                    <div className="card-image  w-20 h-32">
+                      <img
+                        src={RBOOK.image}
+                        alt={RBOOK.title}
+                        className="w-full h-full object-contain md:object-cover lg:object-contain rounded"
+                      />
+                    </div>
+                    <div className="ml-3">
+                      <p className="text-lg text-slate-600">{RBOOK.title}</p>
+                      <p className="text-sm text-slate-400">{RBOOK.author}</p>
+                      <p className="text-cyan-500 font-semibold mt-2">
+                        ${RBOOK.price}
+                      </p>
+                    </div>
                   </div>
-                  <div className="ml-3">
-                    <p className="text-lg text-slate-600">{RBOOK.title}</p>
-                    <p className="text-sm text-slate-400">{RBOOK.author}</p>
-                    <p className="text-cyan-500 font-semibold mt-2">
-                      ${RBOOK.price}
-                    </p>
-                  </div>
-                </div>
                 </Link>
               ))}
+            </div>
+
+            {/* sponsors */}
+            <div className="sponsors mt-10">
+              <p className="text-xl text-slate-600 font-semibold  tracking-wide">
+                Sponsors
+              </p>
+              <div className="w-64 h-64">
+                <img
+                  src={adsImage}
+                  alt="ads"
+                  className="w-full h-full object-contain"
+                />
+              </div>
             </div>
           </div>
           {/* ./Right Side in Lg Screen */}
