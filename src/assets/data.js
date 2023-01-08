@@ -10,7 +10,7 @@ export const books = [
   },
   {
     id: 2,
-    title: "Beautiful Country: A Novel",
+    title: "Beautiful Country",
     author: "Kiera Cass",
     price: 13.99,
     oldPrice: 16.99,
@@ -22,7 +22,7 @@ export const books = [
   },
   {
     id: 3,
-    title: "The Boys from Biloxi: A Legal Thriller",
+    title: "The Boys from Biloxi",
     author: "John Grisham",
     price: 14.99,
     image: "https://m.media-amazon.com/images/I/412jOpl2BwL._SY346_.jpg",
@@ -31,7 +31,7 @@ export const books = [
   },
   {
     id: 4,
-    title: "Long Shadows (Memory Man Series Book 7)",
+    title: "Long Shadows",
     author: "David Baldacci",
     price: 12.99,
     image: "https://m.media-amazon.com/images/I/51809zkrFiL.jpg",
@@ -40,7 +40,7 @@ export const books = [
   },
   {
     id: 5,
-    title: "Mad Honey: A Novel",
+    title: "Mad Honey",
     author: "Jodi Picoult",
     price: 18.99,
     image: "https://m.media-amazon.com/images/I/51hifW2V8WL._SY346_.jpg",
@@ -49,7 +49,7 @@ export const books = [
   },
   {
     id: 6,
-    title: "Eternal Dominion Book 14: Parturitions",
+    title: "Eternal Dominion",
     author: "Bern Dean",
     price: 11.99,
     image: "https://m.media-amazon.com/images/I/51otrCcMNmL.jpg",
@@ -58,7 +58,7 @@ export const books = [
   },
   {
     id: 7,
-    title: "Dreamland: A Novel",
+    title: "Dreamland",
     author: "Nicholas Sparks",
     price: 15.99,
     image: "https://m.media-amazon.com/images/I/51hG1hrnA7L.jpg",
@@ -85,7 +85,7 @@ export const books = [
   },
   {
     id: 10,
-    title: "It Starts with Us: A Novel",
+    title: "It Starts with Us",
     author: "Colleen Hoover",
     price: 10.98,
     image: "https://m.media-amazon.com/images/I/51VC+Vru96L.jpg",

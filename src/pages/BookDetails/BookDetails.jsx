@@ -40,7 +40,7 @@ const BookDetails = () => {
     setViewMore(false);
 
     // to scroll up when open
-    // window.scrollTo(0, 0)
+    window.scrollTo(0, 0)
 
     dispatch(() => getBookById(params.bookID));
     const book = books.find((book) => book.id === Number(params.bookID));
