@@ -11,6 +11,8 @@ import Home from "./pages/Home/Home";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import Books from "./pages/Books/Books";
 import BookDetails from "./pages/BookDetails/BookDetails";
+import Cart from "./pages/Cart/Cart";
+import Checkout from "./pages/Checkout/Checkout";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,12 @@ const router = createBrowserRouter([
       {
         path: "books/:bookID",
         element: <BookDetails />,
+      },{
+        path: "cart",
+        element: <Cart />
+      },{
+        path: "cart/checkout",
+        element: <Checkout />
       }
     ],
   },

@@ -1,3 +1,26 @@
 .books-store .side-menu .active {
     color: var(--main-color);
 }
+
+@media (max-width: 1024px) {
+    .books-store .side-menu {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -100%;
+        overflow: auto;
+        height: 100vh;
+        transition: 300ms;
+        z-index: 9999;
+    }   
+    
+    .books-store .side-menu.show {
+        top: 0;
+        left: 0;
+    }
+}
+
+
+
+
+/* absolute top-0 left-0 bg-slate-50 overflow-auto h-screen w-64 */

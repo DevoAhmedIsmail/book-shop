@@ -24,7 +24,8 @@ const BookDetailSlider = () => {
     <Slider {...settings}>
    {
     books.map((book) =>(
-      <div className="bookDetail-item flex items-center flex-wrap justify-center bg-gradient-to-r from-slate-300 to-slate-50 py-5 px-10 " key={book.id}>
+      <Link to={`/books/${book.id}`} key={book.id} >
+      <div className="bookDetail-item flex items-center flex-wrap justify-center bg-gradient-to-r from-slate-300 to-slate-50 py-5 px-10 ">
       <div className="w-full md:w-1/4 ">
         <img
           src={book.image}
@@ -55,6 +56,7 @@ const BookDetailSlider = () => {
         </Link>
       </div>
     </div>
+      </Link>
     ))
    }
     </Slider>

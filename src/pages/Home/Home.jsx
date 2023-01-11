@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "./Header/Header";
 import "./Home.css";
 import { useSelector } from "react-redux";
@@ -26,6 +26,11 @@ const Home = () => {
   const { books } = useSelector((state) => {
     return state.books;
   });
+
+  useEffect(()=>{
+    // to scroll up when open
+  window.scrollTo(0, 0);
+  },[])
 
   return (
     <main className="home overflow-hidden">
@@ -111,7 +116,7 @@ const Home = () => {
           <h1 className="text-2xl text-center text-slate-700 font-semibold uppercase">
             Limited Time Offer
           </h1>
-          <LimitedTime endDay="10" />
+          <LimitedTime endDay="30" />
         </div>
         {/* Books Offers */}
         <div className="books-offers flex flex-col md:flex-row flex-wrap mt-5">

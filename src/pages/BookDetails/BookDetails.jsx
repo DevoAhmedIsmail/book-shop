@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { AiTwotoneStar, AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { getBookById, getRelatedBooks } from "../../State/booksSlice";
+import { addToCart } from "../../State/cartSlice";
 
 import "./BookDetails.css";
 
@@ -34,13 +35,19 @@ const BookDetails = () => {
     }
   };
 
+  const addToCartHandler = () => {
+    dispatch(addToCart({...BOOK,quantity: count}))
+    setCount(1)
+  };
+const {cart} = useSelector(state=> state.cart)
+
   useEffect(() => {
     // Default Values When render
     setCount(1);
     setViewMore(false);
 
     // to scroll up when open
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
 
     dispatch(() => getBookById(params.bookID));
     const book = books.find((book) => book.id === Number(params.bookID));
@@ -128,7 +135,10 @@ const BookDetails = () => {
                       <AiOutlinePlus />
                     </span>
                   </div>
-                  <button className="bg-cyan-500 text-slate-50 shadow-lg shadow-cyan-700 py-3 px-8 rounded-full tracking-wider font-semibold mt-3 md:mt-0">
+                  <button
+                    className="bg-cyan-500 text-slate-50 shadow-lg shadow-cyan-700 py-3 px-8 rounded-full tracking-wider font-semibold mt-3 md:mt-0"
+                    onClick={addToCartHandler}
+                  >
                     ADD TO CART
                   </button>
                 </div>
@@ -173,14 +183,16 @@ const BookDetails = () => {
                           Eugene Barnett
                         </p>
                         <div className="flex flex-row mt-2 md:mt-0">
-                          <p className="text-sm text-slate-400 mr-3">Rated it</p>
-                        <p className="flex flex-row">
-                          <AiTwotoneStar className="text-yellow-400 text-lg" />
-                          <AiTwotoneStar className="text-yellow-400 text-lg" />
-                          <AiTwotoneStar className="text-yellow-400 text-lg" />
-                          <AiTwotoneStar className="text-yellow-400 text-lg" />
-                          <AiTwotoneStar className="text-yellow-400 text-lg" />
-                        </p>
+                          <p className="text-sm text-slate-400 mr-3">
+                            Rated it
+                          </p>
+                          <p className="flex flex-row">
+                            <AiTwotoneStar className="text-yellow-400 text-lg" />
+                            <AiTwotoneStar className="text-yellow-400 text-lg" />
+                            <AiTwotoneStar className="text-yellow-400 text-lg" />
+                            <AiTwotoneStar className="text-yellow-400 text-lg" />
+                            <AiTwotoneStar className="text-yellow-400 text-lg" />
+                          </p>
                         </div>
                       </div>
                       <span className="text-sm text-slate-400 block mt-2">
@@ -217,7 +229,7 @@ const BookDetails = () => {
               </div>
               {/* ./Comment 1 */}
 
-              {/* comment 1 */}
+              {/* comment 2 */}
               <div className="comments-container mt-8">
                 {/* comment card */}
                 <div className="comment-card flex flex-col md:flex-row">
@@ -238,14 +250,16 @@ const BookDetails = () => {
                           Beverly Schneider
                         </p>
                         <div className="flex flex-row mt-2 md:mt-0">
-                          <p className="text-sm text-slate-400 mr-3">Rated it</p>
-                        <p className="flex flex-row">
-                          <AiTwotoneStar className="text-yellow-400 text-lg" />
-                          <AiTwotoneStar className="text-yellow-400 text-lg" />
-                          <AiTwotoneStar className="text-yellow-400 text-lg" />
-                          <AiTwotoneStar className="text-yellow-400 text-lg" />
-                          <AiTwotoneStar className="text-yellow-400 text-lg" />
-                        </p>
+                          <p className="text-sm text-slate-400 mr-3">
+                            Rated it
+                          </p>
+                          <p className="flex flex-row">
+                            <AiTwotoneStar className="text-yellow-400 text-lg" />
+                            <AiTwotoneStar className="text-yellow-400 text-lg" />
+                            <AiTwotoneStar className="text-yellow-400 text-lg" />
+                            <AiTwotoneStar className="text-yellow-400 text-lg" />
+                            <AiTwotoneStar className="text-yellow-400 text-lg" />
+                          </p>
                         </div>
                       </div>
                       <span className="text-sm text-slate-400 block mt-2">
@@ -274,7 +288,7 @@ const BookDetails = () => {
                   </div>
                 </div>
               </div>
-              {/* ./Comment 1 */}
+              {/* ./Comment 2 */}
             </div>
             {/* ./Comments */}
             <div className="text-center block border-2 py-3 text-slate-400 font-semibold mt-8 cursor-pointer hover:bg-slate-400 hover:text-slate-100 transition">

@@ -73,3 +73,22 @@
 .sidebar-sm a.active::before {
   transform: scaleY(1);
 }
+
+nav .cart-dropdown {
+  z-index: 99999;
+  overflow-y: auto;
+  min-height: 300px;
+  max-height: 400px;
+  position: absolute;
+  top: -500px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 300ms;
+  /* transform: scalex(0,0) */
+}
+
+nav .cart-dropdown.active {
+  top: 55px;
+  opacity: 1;
+  visibility: visible;
+}
